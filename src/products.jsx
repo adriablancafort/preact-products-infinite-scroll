@@ -1,4 +1,3 @@
-import { render } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import Card from './card';
 
@@ -35,9 +34,12 @@ function Products() {
 
     return (
         <>
-            {products.map(product => <Card key={product.id} product={product} />)}
+            <h1 class="title">Products</h1>
+            <div id="products" class="grid">
+                {products.map(product => <Card key={product.id} product={product} />)}
+            </div>
         </>
     );
 }
 
-render(<Products />, document.getElementById('products'));
+export default Products;
