@@ -1,7 +1,6 @@
 import { render } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import Card from './card';
-import './index.css';
 
 function Products() {
     
@@ -36,12 +35,9 @@ function Products() {
 
     return (
         <>
-            <h1 class="title">Products</h1>
-            <div class="grid" >
-                {products.map(product => <Card key={product.id} product={product} />)}
-            </div>
+            {products.map(product => <Card key={product.id} product={product} />)}
         </>
     );
 }
 
-render(<Products />, document.getElementById('root'));
+render(<Products />, document.getElementById('products'));
